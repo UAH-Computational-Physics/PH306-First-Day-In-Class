@@ -6,6 +6,7 @@ Complete the TODOs in this file.
 # --- Imports --- #
 # Numerical Imports
 import numpy as np
+from scipy import integrate
 
 
 # --- Student Assignment --- #
