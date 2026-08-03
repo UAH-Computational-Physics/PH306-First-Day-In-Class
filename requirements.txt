@@ -1,8 +1,2 @@
-ipython
-jupyter
-jupyterlab
-matplotlib
 numpy
-pandas
-scipy
-astropy
+pytest
