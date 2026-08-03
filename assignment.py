@@ -1,70 +1,40 @@
-"""Student assignment implementation file.
+"""Starter file for the PH 306 warm-up assignment.
 
-Complete the TODOs in this file.
+Complete the TODOs in this file. The public tests and CodeGrade checks
+import these functions directly from ``assignment.py``.
 """
 
-# --- Imports --- #
 # Numerical Imports
 import numpy as np
+from astropy import units as u
+from astropy.units import Quantity as Q
 
 
-# --- Student Assignment --- #
-# Problem 1
-def problem1_array_operations() -> tuple[np.ndarray, np.ndarray]:
-    """Return x and y for Problem 1.
-
-    - x: 100 evenly spaced values from 0 to 2*pi (inclusive)
-    - y: sin(x)
+# --- Functions to Implement --- #
+def distance_traveled(v0: Q[u.m/u.s], a: Q[u.m/u.s**2], t: Q[u.s]) -> Q[u.m]:
+    """Return the displacement for constant acceleration.
     """
-    raise NotImplementedError("Implement problem1_array_operations")
+    raise NotImplementedError("Implement distance_traveled")
 
 
-# Problem 2
-def problem2_numerical_integration() -> tuple[float, float]:
-    """Return (result, error) for integral of exp(-x^2) from -inf to +inf."""
-    raise NotImplementedError("Implement problem2_numerical_integration")
+def kinetic_energy(m: Q[u.kg], v: Q[u.m/u.s]) -> Q[u.J]:
+    """Return the kinetic energy of an object.
+    """
+    raise NotImplementedError("Implement kinetic_energy")
 
 
-# --- Public Checks --- #
-def problem1_check() -> None:
-    """Check Problem 1 implementation."""
-    x, y = problem1_array_operations()
-    assert isinstance(x, np.ndarray), "x is not a numpy array"
-    assert isinstance(y, np.ndarray), "y is not a numpy array"
-    assert x.shape == (100,), "x does not have shape (100,)"
-    assert y.shape == (100,), "y does not have shape (100,)"
-    assert np.allclose(y[0], 0), "y[0] is not close to 0"
-    assert np.allclose(y[-1], 0), "y[-1] is not close to 0"
-
-def problem2_check() -> None:
-    """Check Problem 2 implementation."""
-    result, error = problem2_numerical_integration()
-    assert isinstance(result, float), "result is not a float"
-    assert isinstance(error, float), "error is not a float"
-    assert np.isclose(result, np.sqrt(np.pi)), "result is not close to sqrt(pi)"
-    assert error < 1e-6, "error is not less than 1e-6"
+def free_fall_height(
+    y0: Q[u.m],
+    t: Q[u.s],
+    v0: Q[u.m/u.s] = 0.0*u.m/u.s,
+    g: Q[u.m/u.s**2] = 9.81*u.m/u.s**2,
+) -> Q[u.m]:
+    """Return the height of an object in vertical motion.
+    """
+    raise NotImplementedError("Implement free_fall_height")
 
 
-# --- Main --- #
-if __name__ == "__main__":
-    # Run checks for Problem 1
-    try:
-        problem1_check()
-        print("Problem 1 passed all checks.")
-    except AssertionError as e:
-        print(f"Problem 1 failed: {e}")
-        raise
-    except NotImplementedError as e:
-        print(f"Problem 1 not yet implemented: {e}")
-        raise
-
-    # Run checks for Problem 2
-    try:
-        problem2_check()
-        print("Problem 2 passed all checks.")
-    except AssertionError as e:
-        print(f"Problem 2 failed: {e}")
-        raise
-    except NotImplementedError as e:
-        print(f"Problem 2 not yet implemented: {e}")
-        raise
+def projectile_range(v0: Q[u.m/u.s], th0: float, g: Q[u.m/u.s**2] = 9.81*u.m/u.s**2) -> Q[u.m]:
+    """Return the ideal range of a projectile launched and landing at the same height.
+    """
+    raise NotImplementedError("Implement projectile_range")

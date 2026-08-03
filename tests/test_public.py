@@ -1,25 +1,36 @@
 import numpy as np
+from astropy import units as u
 
 import assignment
 
 
-def test_problem1_shapes_and_values():
-    x, y = assignment.problem1_array_operations()
+def test_distance_traveled():
+    result = assignment.distance_traveled(2.0 * u.m / u.s, 3.0 * u.m / u.s**2, 4.0 * u.s)
 
-    assert isinstance(x, np.ndarray), "x must be a NumPy array"
-    assert isinstance(y, np.ndarray), "y must be a NumPy array"
-    assert len(x) == 100, "x must contain 100 elements"
-    assert np.isclose(x[0], 0.0), "x must start at 0"
-    assert np.isclose(x[-1], 2 * np.pi), "x must end at 2π"
-    assert np.allclose(y[0], 0), "y[0] is not close to 0"
-    assert np.allclose(y[-1], 0), "y[-1] is not close to 0"
+    assert isinstance(result, u.Quantity), "distance_traveled must return an astropy Quantity"
+    assert result.unit.is_equivalent(u.m), "distance_traveled must return a length"
+    assert np.isclose(result.to_value(u.m), 32.0), "distance_traveled returned the wrong value"
 
 
-def test_problem2_value_and_error():
-    result, error = assignment.problem2_numerical_integration()
+def test_kinetic_energy():
+    result = assignment.kinetic_energy(2.0 * u.kg, 3.0 * u.m / u.s)
 
-    assert isinstance(result, float), "result must be a float"
-    assert isinstance(error, float), "error must be a float"
-    assert np.isclose(result, np.sqrt(np.pi), rtol=1e-6), (
-        f"result={result} is not close to sqrt(π)={np.sqrt(np.pi)}"
-    )
+    assert isinstance(result, u.Quantity), "kinetic_energy must return an astropy Quantity"
+    assert result.unit.is_equivalent(u.J), "kinetic_energy must return an energy"
+    assert np.isclose(result.to_value(u.J), 9.0), "kinetic_energy returned the wrong value"
+
+
+def test_free_fall_height():
+    result = assignment.free_fall_height(100.0 * u.m, 2.0 * u.s)
+
+    assert isinstance(result, u.Quantity), "free_fall_height must return an astropy Quantity"
+    assert result.unit.is_equivalent(u.m), "free_fall_height must return a length"
+    assert np.isclose(result.to_value(u.m), 80.38), "free_fall_height returned the wrong value"
+
+
+def test_projectile_range():
+    result = assignment.projectile_range(20.0 * u.m / u.s, 45.0)
+
+    assert isinstance(result, u.Quantity), "projectile_range must return an astropy Quantity"
+    assert result.unit.is_equivalent(u.m), "projectile_range must return a length"
+    assert np.isclose(result.to_value(u.m), 40.77471967380224), "projectile_range returned the wrong value"
