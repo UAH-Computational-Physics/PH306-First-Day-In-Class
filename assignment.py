@@ -38,3 +38,9 @@ def projectile_range(v0: Q[u.m/u.s], th0: float, g: Q[u.m/u.s**2] = u.Quantity(9
     """Return the ideal range of a projectile launched and landing at the same height.
     """
     raise NotImplementedError("Implement projectile_range")
+
+
+def quadratic_solver(a: float, b: float, c: float) -> tuple[float, float]:
+    """Return the two roots of a quadratic equation.
+    """
+    raise NotImplementedError("Implement quadratic_solver")
