@@ -33,4 +33,13 @@ def test_projectile_range():
 
     assert isinstance(result, u.Quantity), "projectile_range must return an astropy Quantity"
     assert result.unit.is_equivalent(u.m), "projectile_range must return a length"
-    assert np.isclose(result.to_value(u.m), 40.77471967380224), "projectile_range returned the wrong value"
+    assert np.isclose(result, 40.77471967380224 * u.m), "projectile_range returned the wrong value"
+
+def test_quadratic_solver():
+    result = assignment.quadratic_solver(1.0, -3.0, 2.0)
+    result = tuple(sorted(result))  # Sort the roots for consistent comparison
+
+    assert isinstance(result, tuple), "quadratic_solver must return a tuple"
+    assert len(result) == 2, "quadratic_solver must return a tuple of length 2"
+    assert np.isclose(result[0], 1.0), "quadratic_solver returned the wrong value for the first root"
+    assert np.isclose(result[1], 2.0), "quadratic_solver returned the wrong value for the second root"
