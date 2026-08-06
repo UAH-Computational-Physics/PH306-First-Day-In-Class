@@ -34,7 +34,7 @@ def free_fall_height(
     raise NotImplementedError("Implement free_fall_height")
 
 
-def projectile_range(v0: Q[u.m/u.s], th0: float, g: Q[u.m/u.s**2] = u.Quantity(9.81, u.m / u.s**2)) -> Q[u.m]:
+def projectile_range(v0: Q[u.m/u.s], th0: Q[u.deg], g: Q[u.m/u.s**2] = u.Quantity(9.81, u.m / u.s**2)) -> Q[u.m]:
     """Return the ideal range of a projectile launched and landing at the same height.
     """
     raise NotImplementedError("Implement projectile_range")
