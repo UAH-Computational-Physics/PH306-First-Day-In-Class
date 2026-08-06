@@ -15,8 +15,23 @@ EARTH_GRAVITY = u.Quantity(9.81, u.m / u.s**2)  # Earth's gravitational accelera
 
 
 # --- Functions to Implement --- #
+@u.quantity_input(v0="speed", a="acceleration", t="time")
 def distance_traveled(v0: Q[u.m/u.s], a: Q[u.m/u.s**2], t: Q[u.s]) -> Q[u.m]:
     """Return the displacement for constant acceleration.
+
+    Parameters
+    ----------
+    v0 : Quantity['speed']
+        Initial velocity of the object.
+    a : Quantity['acceleration']
+        Constant acceleration of the object.
+    t : Quantity['time']
+        Elapsed time over which the object moves.
+
+    Returns
+    -------
+    Quantity['length']
+        Displacement computed from $v_0 t + \frac{1}{2} a t^2$.
     """
     raise NotImplementedError("Implement distance_traveled")
 
