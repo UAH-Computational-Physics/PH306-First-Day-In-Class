@@ -29,7 +29,7 @@ def test_free_fall_height():
 
 
 def test_projectile_range():
-    result = assignment.projectile_range(20.0 * u.m / u.s, 45.0)
+    result = assignment.projectile_range(20.0 * u.m / u.s, 45.0*u.deg)
 
     assert isinstance(result, u.Quantity), "projectile_range must return an astropy Quantity"
     assert result.unit.is_equivalent(u.m), "projectile_range must return a length"
