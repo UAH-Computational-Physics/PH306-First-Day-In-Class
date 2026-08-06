@@ -5,4 +5,5 @@ dependencies:
   - python>=3.11
   - astropy
   - numpy
+  - numpydoc
   - pytest
