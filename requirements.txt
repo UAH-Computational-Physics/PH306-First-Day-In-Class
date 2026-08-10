@@ -2,3 +2,4 @@ astropy
 numpy
 numpydoc
 pytest
+mypy

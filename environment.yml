@@ -7,3 +7,4 @@ dependencies:
   - numpy
   - numpydoc
   - pytest
+  - mypy
