@@ -8,16 +8,17 @@ This repository is a script-first starter for a simple introductory Physics assi
 
 ## Supporting Files
 
-- `tests/test_public.py`: visible checks that match the CodeGrade contract
+- `test_public.py`: visible checks that match the CodeGrade contract
 
 ## What Students Implement
 
-Complete the four function stubs in `assignment.py`:
+Complete the function stubs in `assignment.py`:
 
 - `distance_traveled`
 - `kinetic_energy`
 - `free_fall_height`
 - `projectile_range`
+- `quadratic_solver`
 
 Each function uses a standard introductory mechanics formula.
 
@@ -28,6 +29,15 @@ Each function uses a standard introductory mechanics formula.
 1. Run `python assignment.py` or `pytest` to check your work.
 1. Commit and push your changes.
 1. Review the autograding results in CodeGrade.
+
+## Grading and Checks
+
+CodeGrade evaluates submissions with four categories of checks:
+
+1. Syntax validity: parsed with `ast` to confirm your file is valid Python.
+1. Structure and quality: checked with `semgrep`, `flake8`, `mypy`, and `numpydoc`.
+1. Functionality: checked with `pytest` against the public tests.
+1. Contract compatibility: public test files in this repo mirror the visible grading contract.
 
 ## Environment
 
