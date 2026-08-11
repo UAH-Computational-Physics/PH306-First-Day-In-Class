@@ -54,13 +54,13 @@ def free_fall_height(
 
 
 
-def projectile_range(v0: Q[u.m/u.s], th0: Q[u.deg], g: Q[u.m/u.s**2] = EARTH_GRAVITY) -> Q[u.m]:
+def projectile_range(v0, th0, g = EARTH_GRAVITY):
     """Return the ideal range of a projectile launched and landing at the same height.
     """
     raise NotImplementedError("Implement projectile_range")
 
 
-def quadratic_solver(a: float, b: float, c: float) -> tuple[float, float]:
+def quadratic_solver(a: float, b, c) -> tuple[float, float]:
     """Return the two roots of a quadratic equation.
     """
     raise NotImplementedError("Implement quadratic_solver")
