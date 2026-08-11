@@ -8,7 +8,7 @@ This repository is a script-first starter for a simple introductory Physics assi
 
 ## Supporting Files
 
-- `test_public.py`: visible checks that match the CodeGrade contract
+- `test_public.py`: visible checks that match the CodeGrade auto-grader.
 
 ## What Students Implement
 
@@ -20,7 +20,7 @@ Complete the function stubs in `assignment.py`:
 - `projectile_range`
 - `quadratic_solver`
 
-Each function uses a standard introductory mechanics formula.
+Each function uses a standard introductory mechanics/mathematical equation.
 
 ## Workflow
 
@@ -36,8 +36,8 @@ CodeGrade evaluates submissions with four categories of checks:
 
 1. Syntax validity: parsed with `ast` to confirm your file is valid Python.
 1. Structure and quality: checked with `semgrep`, `flake8`, `mypy`, and `numpydoc`.
-1. Functionality: checked with `pytest` against the public tests.
-1. Contract compatibility: public test files in this repo mirror the visible grading contract.
+1. Functionality: checked with `pytest` against the public tests (and private tests on CodeGrade).
+  - Note: public test files in this repo mirror the public tests on CodeGrade.
 
 ## Environment
 
