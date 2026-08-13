@@ -1,22 +1,44 @@
-# PH306 Assignment Template (Notebook + Script Grading)
+# PH 306 Mechanics Warm-Up
 
-This template is designed to create specific assignment templates for PH 306 using [CodeGrade](https://www.codegrade.com/).
+This repository is a script-first starter for a simple introductory Physics assignment in PH 306. The goal is to practice getting set up in GitHub Codespaces, editing a Python file, and reading CodeGrade feedback without adding a lot of overhead.
 
-- The Python files `assignment.ipynb` & `assignment.py` serve as example CodeGrade assignments.
-- To create a new assignment, create a new repository based on this template then [set up that new repository as a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository).
+## Primary File
 
-## Files
+- `assignment.py`: the student work file for this assignment
 
-- `assignment.ipynb`: example notebook assignment
-- `assignment.py`: example script assignment
-- `tests/test_public.py`: visible tests used by CodeGrade autograder
+## Supporting Files
 
-## Student workflow
+- `test_public.py`: visible checks that match the CodeGrade auto-grader.
 
-1. Open the assignment script or notebook.
-1. Commit and push.
-1. Review autograding results in CodeGrade.
+## What Students Implement
 
-## Devcontainer environment
+Complete the function stubs in `assignment.py`:
 
-The provided `.devcontainer/devcontainer.json` and `.devcontainer/Dockerfile` uses a Micromamba image and creates a new environment with `mamba` from `environment.yml` (using `conda-forge` and `astropy`). This is primarily used for students who prefer to develop in [GitHub Codespaces](https://github.com/features/codespaces).
+- `distance_traveled`
+- `kinetic_energy`
+- `free_fall_height`
+- `projectile_range`
+- `quadratic_solver`
+
+Each function uses a standard introductory mechanics/mathematical equation.
+
+## Workflow
+
+1. Open `assignment.py` in Codespaces or your local editor.
+1. Fill in the function bodies.
+1. Run `python assignment.py` or `pytest` to check your work.
+1. Commit and push your changes.
+1. Review the autograding results in CodeGrade.
+
+## Grading and Checks
+
+CodeGrade evaluates submissions with four categories of checks:
+
+1. Syntax validity: parsed with `ast` to confirm your file is valid Python.
+1. Structure and quality: checked with `semgrep`, `flake8`, `mypy`, and `numpydoc`.
+1. Functionality: checked with `pytest` against the public tests (and private tests on CodeGrade).
+  - Note: public test files in this repo mirror the public tests on CodeGrade.
+
+## Environment
+
+The repository includes `requirements.txt` for pip-based setup and `environment.yml` for Codespaces or conda-style workflows.
