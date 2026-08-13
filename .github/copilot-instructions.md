@@ -4,7 +4,7 @@
 
 This repository is a PH 306 (Computational Physics) assignment template focused on a simple mechanics warm-up.
 
-The assignment is script-first. The primary student work file is `assignment.py`, and the visible checks in `tests/test_public.py` match the CodeGrade contract.
+The assignment is script-first. The primary student work file is `assignment.py`, and the visible checks in `test_public.py` match the CodeGrade contract.
 
 Students may work in one of these environments:
 - Local machine
