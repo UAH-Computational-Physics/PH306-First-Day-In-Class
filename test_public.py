@@ -29,11 +29,12 @@ def test_free_fall_height():
 
 
 def test_projectile_range():
-    result = assignment.projectile_range(20.0 * u.m / u.s, 45.0*u.deg)
+    result = assignment.projectile_range(20.0 * u.m / u.s, 45.0 * u.deg)
 
     assert isinstance(result, u.Quantity), "projectile_range must return an astropy Quantity"
     assert result.unit.is_equivalent(u.m), "projectile_range must return a length"
     assert np.isclose(result, 40.77471967380224 * u.m), "projectile_range returned the wrong value"
+
 
 def test_quadratic_solver():
     result = assignment.quadratic_solver(1.0, -3.0, 2.0)
